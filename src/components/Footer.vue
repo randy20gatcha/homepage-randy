@@ -64,13 +64,6 @@
 <script setup lang="ts">
 import logo from '../assets/logo-footer.png'
 
-// const links = [
-//   { text: "Services", href: "#services" },
-//   { text: "Case Studies", href: "#case-study" },
-//   { text: "Testimonials", href: "#testimonials" },
-//   { text: "Contact", href: "#footer" },
-// ];
-
 const links = [
   { label: 'STUDIO', href: "_blank" },
   { label: 'PROJECT CONTROL', href: "_blank" },

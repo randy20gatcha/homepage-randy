@@ -1,13 +1,20 @@
 <template>
  <v-app-bar app flat color="white" class="px-4">
     <!-- Logo -->
-    <v-img
-      :src="logo"
-      alt="FEELDX Logo"
-      max-height="40"
-      contain
-      class="mr-4"
-    />
+    <a
+      href="https://randy20gatcha.github.io/homepage-prototype/" 
+      rel="noopener noreferrer" 
+      style="display: block;"
+    >
+     <v-img
+       :src="logo"
+       alt="FEELDX Logo"
+       max-height="40"
+       width="auto"
+       contain
+       class="mr-4"
+     />
+    </a>
 
     <!-- Desktop Navigation -->
     <v-spacer />
@@ -75,6 +82,7 @@ import { computed, ref } from 'vue'
 import logo from '../assets/logo.png'
 
 const drawer = ref(false)
+// const url = 'https://randy20gatcha.github.io/homepage-prototype/'
 
 const navItems = [
   { label: 'STUDIO' },
