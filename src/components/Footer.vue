@@ -1,26 +1,29 @@
 <template>
-  <v-footer color="primary" class="text-white pt-8">
+  <v-footer color="#202318" class="text-white pt-8">
     <v-container>
       <v-row>
         <!-- Company Info -->
         <v-col cols="12" md="4" class="mb-6 mb-md-0">
-          <h4 class="text-h6 font-weight-bold">FeelDX</h4>
-          <p class="text-body-2">
-            Creating digital experiences for healthcare, education, and government.
-          </p>
+          <a href="https://example.com" target="_blank">
+            <v-img
+              :src="logo"
+              alt="FEELDX Logo"
+              max-height="70"
+              contain
+              class="mr-4"
+            />
+          </a>        
         </v-col>
 
         <!-- Navigation Links -->
         <v-col cols="12" md="4" class="mb-6 mb-md-0">
-          <h4 class="text-subtitle-1 font-weight-medium">Quick Links</h4>
           <v-list-item
             v-for="link in links"
-            :key="link.text"
+            :key="link.label"
             :href="link.href"
             class="text-white px-0"
           >
-            <v-icon size="18" class="mr-2">mdi-chevron-right</v-icon>
-            {{ link.text }}
+            {{ link.label }}
           </v-list-item>
         </v-col>
 
@@ -28,9 +31,19 @@
         <v-col cols="12" md="4">
           <h4 class="text-subtitle-1 font-weight-medium">Contact Us</h4>
           <div class="text-body-2">
-            <div><v-icon size="18" class="mr-1">mdi-email</v-icon> info@feeldx.com</div>
-            <div><v-icon size="18" class="mr-1">mdi-phone</v-icon> +63 912 345 6789</div>
-            <div><v-icon size="18" class="mr-1">mdi-map-marker</v-icon> Metro Manila, Philippines</div>
+            <div><v-icon size="18" class="mr-1">mdi-phone</v-icon> 1800 333 539</div>
+            <span></span>
+            <div>
+              <v-icon size="18" class="mr-1">mdi-map-marker</v-icon>
+              <span>
+                WATERMAN BUSINESS CENTRE
+                Suite 70,
+              </span> <br>
+              <span> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;44 LAKEVIEW DR
+                SCORESBY 3179
+              </span>
+            </div>
           </div>
         </v-col>
       </v-row>
@@ -49,10 +62,27 @@
 </template>
 
 <script setup lang="ts">
+import logo from '../assets/logo-footer.png'
+
+// const links = [
+//   { text: "Services", href: "#services" },
+//   { text: "Case Studies", href: "#case-study" },
+//   { text: "Testimonials", href: "#testimonials" },
+//   { text: "Contact", href: "#footer" },
+// ];
+
 const links = [
-  { text: "Services", href: "#services" },
-  { text: "Case Studies", href: "#case-study" },
-  { text: "Testimonials", href: "#testimonials" },
-  { text: "Contact", href: "#footer" },
-];
+  { label: 'STUDIO', href: "_blank" },
+  { label: 'PROJECT CONTROL', href: "_blank" },
+  { label: 'SERVICES', href: "_blank" },
+  { label: 'TECHNOLOGY', href: "_blank" },
+  { label: 'OUR WORK', href: "_blank" },
+  { label: 'CONTACT US', href: "_blank" },
+  {
+    label: 'ABOUT US',
+    children: ['Our Team', 'Our Story'],
+    href: "_blank"
+  },
+  { label: 'NEWS', href: "_blank" }
+]
 </script>

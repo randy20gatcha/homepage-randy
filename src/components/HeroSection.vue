@@ -27,11 +27,11 @@
 const images = [
   {
     url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80',
-    label: 'Mining',
+    label: 'Data Centres',
   },
   {
     url: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&h=600&q=80',
-    label: 'Construction',
+    label: 'Technology',
   }
 ];
 </script>
