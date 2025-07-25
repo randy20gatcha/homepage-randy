@@ -2,7 +2,7 @@
  <v-app-bar app flat color="white" class="px-4">
     <!-- Logo -->
      <a 
-       href="https://randy20gatcha.github.io/homepage-prototype/" 
+       :href="url" 
        rel="noopener noreferrer"
        style="text-decoration: none; display: block; line-height: 0;"
       >
@@ -81,7 +81,7 @@ import { computed, ref } from 'vue'
 import logo from '../assets/logo.png'
 
 const drawer = ref(false)
-// const url = 'https://randy20gatcha.github.io/homepage-prototype/'
+const url = 'https://randy20gatcha.github.io/homepage-prototype/'
 
 const navItems = [
   { label: 'STUDIO' },
