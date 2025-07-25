@@ -43,7 +43,7 @@ const scrollToSection = (targetId: string) => {
 #floating-button {
   position: fixed;
   bottom: 80px;
-  right: 30px;
-  z-index: 1001;
+  right: 20px;
+  z-index: 1000;
 }
 </style>

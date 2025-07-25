@@ -24,3 +24,16 @@ import Footer from "../components/Footer.vue";
 import FloatingBtn from "../components/FloatingButton.vue"
 </script>
 
+<style>
+/*
+  Apply scroll-margin-top to the target sections.
+  This CSS should be in a global stylesheet or in the <style> block
+  of DefaultLayout.vue (without 'scoped', to apply to child components).
+*/
+#services-overview,
+#value-proposition,
+#case-study,
+#testimonials {
+  scroll-margin-top: 80px;
+}
+</style>
