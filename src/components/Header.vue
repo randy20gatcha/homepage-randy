@@ -1,20 +1,19 @@
 <template>
  <v-app-bar app flat color="white" class="px-4">
     <!-- Logo -->
-    <a
-      href="https://randy20gatcha.github.io/homepage-prototype/" 
-      rel="noopener noreferrer" 
-      style="display: block;"
-    >
-     <v-img
-       :src="logo"
-       alt="FEELDX Logo"
-       max-height="40"
-       width="auto"
-       contain
-       class="mr-4"
-     />
-    </a>
+     <a 
+       href="https://randy20gatcha.github.io/homepage-prototype/" 
+       rel="noopener noreferrer"
+       style="text-decoration: none; display: block; line-height: 0;"
+      >
+        <v-img
+          :src="logo"
+          alt="FEELDX Logo"
+          height="50"
+          width="100"
+          contain
+        />
+     </a>
 
     <!-- Desktop Navigation -->
     <v-spacer />
