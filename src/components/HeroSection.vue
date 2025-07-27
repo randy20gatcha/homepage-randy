@@ -10,7 +10,7 @@
       
     >
       <v-carousel-item
-        v-for="(img, i) in images"
+        v-for="(img, i) in HER0_IMAGES"
         :key="i"
         :src="img.url"
         cover
@@ -20,20 +20,21 @@
         </div>
       </v-carousel-item>
     </v-carousel>
+    <!-- Floating Button -->
+    <v-btn
+      class="position-absolute text-white"
+      color="amber darken-3"
+      style="bottom: 100px; left: 50%; transform: translateX(-50%); z-index: 10;"
+      rounded
+    >
+      Book a Demo
+    </v-btn>
   </div>
 </template>
 
 <script setup lang="ts">
-const images = [
-  {
-    url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80',
-    label: 'Data Centres',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&h=600&q=80',
-    label: 'Technology',
-  }
-];
+import { HER0_IMAGES } from "../data/hero-section";
+
 </script>
 
 <style scoped>

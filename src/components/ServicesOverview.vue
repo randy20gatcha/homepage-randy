@@ -1,6 +1,8 @@
 <template>
   <v-container id="services-overview" class="py-10" fluid>
-    <h2 class="text-h4 text-center mb-8">Our Services</h2>
+    <h2 class="text-h4 font-weight-bold mb-8 text-center">
+      Our Services
+    </h2>
 
     <v-row dense>
       <v-col
