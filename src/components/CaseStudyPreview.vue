@@ -54,7 +54,7 @@ const caseStudies = [
     subtitle: "Finance",
     description:
       "A secure and user-friendly system for onboarding banking clients.",
-    image: "https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?_gl=1*1ai8gj2*_ga*MTMzMzUzNjE2NS4xNzUzNTk5MDAx*_ga_8JE65Q40S6*czE3NTM2MDY4MjckbzIkZzEkdDE3NTM2MDY5NTckajYwJGwwJGgw",
+    image: "https://plus.unsplash.com/premium_photo-1681487769650-a0c3fbaed85a?q=80&w=955&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "#",
   },
   {

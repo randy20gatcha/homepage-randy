@@ -59,7 +59,7 @@
     </div>
 
     <!-- Mobile Menu Button -->
-    <v-btn icon class="d-md-none" @click="drawer = true">
+    <v-btn icon class="d-md-none" @click="drawer = !drawer">
       <v-icon>mdi-menu</v-icon>
     </v-btn>
   </v-app-bar>
@@ -71,8 +71,9 @@
         v-for="item in flatNavItems"
         :key="item"
         :title="item"
+        class="drawer-item"
       />
-      <v-list-item title="1800 333 539" />
+      <v-list-item title="1800 333 539" class="drawer-item"/>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -116,6 +117,17 @@ const flatNavItems = computed(() =>
 }
 
 .logo-link:hover {
-  background-color: #f0f0f0; /* Replace with your desired color */
+  background-color: #f0f0f0;
+}
+
+.drawer-item {
+  transition: background-color 0.3s ease;
+}
+
+.drawer-item:hover {
+  background-color: #f0f0f0;
+}
+.drawer-item:active {
+  background-color: #e0e0e0;
 }
 </style>
