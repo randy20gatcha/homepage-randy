@@ -10,7 +10,7 @@
         md="4"
         lg="3"
       >
-        <v-card class="pa-4 h-100" elevation="4" rounded="xl">
+        <v-card class="pa-4 h-100" elevation="4" rounded="xl" link>
           <v-icon color="primary" size="40" class="mb-4">
             {{ item.icon }}
           </v-icon>

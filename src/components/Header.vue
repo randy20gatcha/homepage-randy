@@ -1,7 +1,8 @@
 <template>
  <v-app-bar app flat color="white" class="px-4">
     <!-- Logo -->
-     <a 
+     <a
+       class="logo-link" 
        :href="url" 
        rel="noopener noreferrer"
        style="text-decoration: none; display: block; line-height: 0;"
@@ -105,3 +106,16 @@ const flatNavItems = computed(() =>
   navItems.flatMap(item => item.children || item.label)
 )
 </script>
+
+<style scoped>
+.logo-link {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.logo-link:hover {
+  background-color: #f0f0f0; /* Replace with your desired color */
+}
+</style>

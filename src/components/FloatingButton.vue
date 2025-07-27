@@ -9,7 +9,7 @@
         <template #activator="{ props }">
           <v-btn
             v-bind="props"
-            @click="scrollToSection(btn.target)"
+            @click="scrollToSection(btn.target, btn.duration)"
             icon
             size="small"
             color="primary"
@@ -25,17 +25,42 @@
 
 <script setup lang="ts">
 const buttons = [
-  { label: 'Services', icon: 'mdi-briefcase-outline', target: 'services-overview' },
-  { label: 'Value', icon: 'mdi-star-outline', target: 'value-proposition' },
-  { label: 'Case Study', icon: 'mdi-file-document-outline', target: 'case-study' },
-  { label: 'Testimonials', icon: 'mdi-account-voice', target: 'testimonials' }
+  { label: 'Services', icon: 'mdi-briefcase-outline', target: 'services-overview', duration: 1000 },
+  { label: 'Value', icon: 'mdi-star-outline', target: 'value-proposition', duration: 1100 },
+  { label: 'Case Study', icon: 'mdi-file-document-outline', target: 'case-study', duration: 1200 },
+  { label: 'Testimonials', icon: 'mdi-account-voice', target: 'testimonials', duration: 1300 }
 ]
 
-const scrollToSection = (targetId: string) => {
-  const el = document.getElementById(targetId)
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-  }
+const scrollToSection = (targetId: string, duration = 1000, offset = 64) => {
+  // stock scrolling behaviour
+  // const el = document.getElementById(targetId)
+  // if (el) {
+  //   el.scrollIntoView({ behavior: 'smooth' })
+  // }
+
+  // Smooth scroll effect
+  const el = document.getElementById(targetId);
+  if (!el) return;
+
+  const start = window.scrollY;
+  const end = el.getBoundingClientRect().top + start - offset;
+  const startTime = performance.now();
+
+  const ease = (t: number) => t < 0.5
+    ? 2 * t * t
+    : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+  const scroll = (now: number) => {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = ease(progress);
+
+    window.scrollTo(0, start + (end - start) * eased);
+
+    if (progress < 1) requestAnimationFrame(scroll);
+  };
+
+  requestAnimationFrame(scroll);
 }
 </script>
 
