@@ -3,13 +3,13 @@
     <!-- Logo -->
      <a
        class="logo-link" 
-       :href="url" 
+       href="/" 
        rel="noopener noreferrer"
        style="text-decoration: none; display: block; line-height: 0;"
       >
         <v-img
-          :src="logo"
-          alt="FEELDX Logo"
+          src="/"
+          alt="ACM Transport Tech Logo"
           height="50"
           width="100"
           contain
@@ -28,32 +28,30 @@
         >
           {{ item.label }}
         </v-btn>
+
+         <!-- Dropdown for SERVICES -->
+        <v-menu v-else>
+          <template #activator="{ props }">
+            <v-btn text class="text-button mx-2" v-bind="props">
+              {{ item.label }}
+              <v-icon size="18" class="ml-1">mdi-chevron-down</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="child in item.children"
+              :key="child"
+              :title="child"
+            />
+          </v-list>
+        </v-menu>
       </div>
 
-      <!-- Dropdown for ABOUT US -->
-      <v-menu v-if="aboutUsItem">
-        <template #activator="{ props }">
-          <v-btn text class="text-button mx-2" v-bind="props">
-            {{ aboutUsItem.label }}
-            <v-icon size="18" class="ml-1">mdi-chevron-down</v-icon>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="child in aboutUsItem.children"
-            :key="child"
-            :title="child"
-          />
-        </v-list>
-      </v-menu>
-
       <!-- Phone Button -->
-      <v-btn
-        class="ml-4"
-        color="grey"
-        variant="outlined"
-        style="border: 1px solid #000"
-      >
+     <v-btn class="drawer-item">
+        <template #prepend>
+          <v-icon>mdi-phone</v-icon>
+        </template>
         1800 333 539
       </v-btn>
     </div>
@@ -67,45 +65,70 @@
   <!-- Mobile Navigation Drawer -->
   <v-navigation-drawer app v-model="drawer" temporary location="right">
     <v-list>
+      <template v-for="item in navItems" :key="item.label">
+      <!-- If no children: normal item -->
       <v-list-item
-        v-for="item in flatNavItems"
-        :key="item"
-        :title="item"
+        v-if="!item.children"
+        :title="item.label"
         class="drawer-item"
       />
-      <v-list-item title="1800 333 539" class="drawer-item"/>
+
+      <!-- If has children: use v-list-group -->
+      <v-list-group
+        v-else
+        :value="false"
+      >
+        <template #activator="{ props }">
+          <v-list-item v-bind="props" :title="item.label" class="drawer-item"/>
+        </template>
+
+        <!-- children items -->
+        <v-list-item
+          v-for="child in item.children"
+          :key="child"
+          :title="child"
+          class="drawer-subitem"
+        />
+      </v-list-group>
+    </template>
+
+      <v-list-item title="1800 333 539" class="drawer-item">
+        <template #prepend>
+          <v-icon>mdi-phone</v-icon>
+        </template>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import logo from '../assets/logo.png'
+import { ref } from 'vue'
+// import logo from '../assets/logo.png'
 
 const drawer = ref(false)
-const url = 'https://randy20gatcha.github.io/homepage-prototype/'
+// const url = 'https://randy20gatcha.github.io/homepage-prototype/'
 
 const navItems = [
-  { label: 'STUDIO' },
-  { label: 'PROJECT CONTROL' },
-  { label: 'SERVICES' },
-  { label: 'TECHNOLOGY' },
-  { label: 'OUR WORK' },
-  { label: 'CONTACT US' },
-  {
-    label: 'ABOUT US',
-    children: ['Our Team', 'Our Story']
+  { label: 'HOME' },
+  { label: 'ABOUT US' },
+  { label: 'SERVICES',
+    children: [
+      'DESIGN AND ENGINEERING',
+      'MANUFACTURING',
+      'BUILDS AND FIT OUTS',
+      'TRIMS AND ACCESSORIES',
+      'AUTO ELECTRICS',
+      'SERVICING AND MAINTENANCE'
+    ]
   },
-  { label: 'NEWS' }
+  { label: 'SPECIALISATION' },
+  { label: 'CONTACT US' }
 ]
 
-// For dropdown menu
-const aboutUsItem = navItems.find(item => item.label === 'ABOUT US')
-
 // Flatten nav items for mobile drawer
-const flatNavItems = computed(() =>
-  navItems.flatMap(item => item.children || item.label)
-)
+// const flatNavItems = computed(() =>
+//   navItems.flatMap(item => item.children || item.label)
+// )
 </script>
 
 <style scoped>
@@ -122,6 +145,10 @@ const flatNavItems = computed(() =>
 
 .drawer-item {
   transition: background-color 0.3s ease;
+}
+
+.drawer-subitem {
+  padding-left: 16px !important; /* default is usually 32px */
 }
 
 .drawer-item:hover {
