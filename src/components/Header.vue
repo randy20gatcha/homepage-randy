@@ -18,7 +18,7 @@
 
     <!-- Desktop Navigation -->
     <v-spacer />
-    <div class="d-none d-md-flex align-center">
+    <div class="d-none d-lg-flex align-center text-h2">
       <div v-for="item in navItems">
         <v-btn
           :key="item.label"
@@ -26,15 +26,15 @@
           text
           class="text-button mx-2"
           size="x-large"
-        >
-          {{ item.label }}
+        >        
+          <span class="text-h6">{{ item.label }}</span>
         </v-btn>
 
          <!-- Dropdown for SERVICES -->
         <v-menu v-else>
           <template #activator="{ props }">
             <v-btn text class="text-button mx-2" v-bind="props">
-              {{ item.label }}
+              <span class="text-h6">{{ item.label }}</span>
               <v-icon size="18" class="ml-1">mdi-chevron-down</v-icon>
             </v-btn>
           </template>
@@ -52,13 +52,13 @@
      <v-btn class="drawer-item">
         <template #prepend>
           <v-icon>mdi-phone</v-icon>
-        </template>
-        1800 333 539
+        </template>        
+        <span class="text-h6">1800 333 539</span>
       </v-btn>
     </div>
 
     <!-- Mobile Menu Button -->
-    <v-btn icon class="d-md-none" @click="drawer = !drawer">
+    <v-btn icon class="d-lg-none" @click="drawer = !drawer">
       <v-icon>mdi-menu</v-icon>
     </v-btn>
   </v-app-bar>
