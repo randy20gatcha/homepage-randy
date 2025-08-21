@@ -1,5 +1,5 @@
 <template>
- <v-app-bar app flat color="white" class="px-4">
+ <v-app-bar app flat color="#c3c09d" class="px-4" height="150">
     <!-- Logo -->
      <a
        class="logo-link" 
@@ -7,11 +7,11 @@
        rel="noopener noreferrer"
        style="text-decoration: none; display: block; line-height: 0;"
       >
-        <v-img
-          src="/"
+        <img
+          :src="logo"
           alt="ACM Transport Tech Logo"
-          height="50"
-          width="100"
+          height="150"
+          width="280"
           contain
         />
      </a>
@@ -25,6 +25,7 @@
           v-if="!item.children"
           text
           class="text-button mx-2"
+          size="x-large"
         >
           {{ item.label }}
         </v-btn>
@@ -103,6 +104,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import logo from '../assets/acmtransport-logo.png'
 // import logo from '../assets/logo.png'
 
 const drawer = ref(false)

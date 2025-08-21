@@ -31,7 +31,7 @@ const buttons = [
   { label: 'Testimonials', icon: 'mdi-account-voice', target: 'testimonials', duration: 1300 }
 ]
 
-const scrollToSection = (targetId: string, duration = 1000, offset = 64) => {
+const scrollToSection = (targetId: string, duration = 1000, offset = 110) => {
   // stock scrolling behaviour
   // const el = document.getElementById(targetId)
   // if (el) {
