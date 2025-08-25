@@ -123,7 +123,7 @@ const navItems = [
     children: [
      { label: 'DESIGN AND ENGINEERING', routeName: ROUTE_NAME.DESIGN_ENGINEERING },
      {label: 'MANUFACTURING', routeName: ROUTE_NAME.MANUFACTURING },
-     {label: 'BUILDS AND FIT OUTS', routeName: "" },
+     {label: 'BUILDS AND FIT OUTS', routeName: ROUTE_NAME.BUILDS_FITOUTS },
      {label: 'TRIMS AND ACCESSORIES', routeName: " "},
      {label: 'AUTO ELECTRICS', routeName: "" },
      {label: 'SERVICING AND MAINTENANCE', routeName: "" }
