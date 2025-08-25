@@ -23,8 +23,9 @@
         <v-btn
           :key="item.label"
           v-if="!item.children"
-          text
+          variant="text"
           class="text-button mx-2"
+          :class="{ 'is-home-active': route.path === '/' && item.label === 'HOME' }"
           size="x-large"
           @click="goToRoute(item.label)"
         >        
@@ -55,7 +56,7 @@
         <template #prepend>
           <v-icon>mdi-phone</v-icon>
         </template>        
-        <span class="text-h6">1800 333 539</span>
+        <span class="text-h6">03 8679 6888</span>
       </v-btn>
     </div>
 
@@ -111,9 +112,11 @@ import { ref } from 'vue';
 import logo from '../assets/acmtransport-logo.png'; 
 import { ROUTE_NAME } from "../router/index";
 import router from "../router";
+import { useRoute } from "vue-router";
 // import logo from '../assets/logo.png'
 
-const drawer = ref(false)
+const drawer = ref(false);
+const route = useRoute();
 // const url = 'https://randy20gatcha.github.io/homepage-prototype/'
 
 const navItems = [
@@ -166,5 +169,12 @@ const goToRoute = (routeName: string) => {
 }
 .drawer-item:active {
   background-color: #e0e0e0;
+}
+
+/* More specific target to beat Vuetify’s reset styles */
+.v-btn.is-home-active .v-btn__content > span {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
 }
 </style>

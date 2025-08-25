@@ -12,25 +12,23 @@
        width="60vw"
        height="50vh"
      >
-       <template v-slot:actions>
-         <div class="d-flex justify-center w-100">
-           <v-btn
-             class="text-white"
-             prepend-icon="mdi-phone"
-             color="amber darken-3"
-             variant="flat"
-             rounded
-             style="bottom: -100px;"
-           >
-             Contact us now
-           </v-btn>
-         </div>
-       </template>
+       <ContactBtn />
      </v-card>
   </v-container>
 </template>
 
 <script setup lang="ts">
 import manufacturing from "../assets/manufacturing.jpg"
+import ContactBtn from "../views/components/ContactBtn.vue";
 import Header from "./components/Header.vue";
 </script>
+
+<style scoped>
+.contact-btn {
+  transition: transform 0.25s ease; /* smooth animation */
+}
+
+.contact-btn:hover {
+  transform: scale(1.1); /* enlarge by 10% */
+}
+</style>

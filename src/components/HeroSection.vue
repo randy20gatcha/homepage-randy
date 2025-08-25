@@ -7,7 +7,7 @@
       :show-arrows="false"
       interval="5000"
       hide-delimiter-background
-      
+      class="slow-carousel"
     >
       <v-carousel-item
         v-for="(img, i) in HER0_IMAGES"
@@ -21,19 +21,19 @@
       </v-carousel-item>
     </v-carousel>
     <!-- Floating Button -->
-    <v-btn
+    <div
       class="position-absolute text-white"
       color="amber darken-3"
-      style="bottom: 100px; left: 50%; transform: translateX(-50%); z-index: 10;"
-      rounded
+      style="bottom: 260px; left: 50%; transform: translateX(-50%); z-index: 10;"
     >
-      Book a Demo
-    </v-btn>
+      <ContactBtn />
+  </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { HER0_IMAGES } from "../data/hero-section";
+import ContactBtn from "../views/components/ContactBtn.vue";
 
 </script>
 
@@ -63,5 +63,10 @@ import { HER0_IMAGES } from "../data/hero-section";
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.slow-carousel .v-window__container {
+  transition-duration: 10000ms !important; /* 1.5s instead of default ~300ms */
+  transition-timing-function: ease-in-out !important; /* smooth start + end */
 }
 </style>
