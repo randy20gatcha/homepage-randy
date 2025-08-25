@@ -26,6 +26,7 @@
           text
           class="text-button mx-2"
           size="x-large"
+          @click="goToRoute(item.label)"
         >        
           <span class="text-h6">{{ item.label }}</span>
         </v-btn>
@@ -41,8 +42,9 @@
           <v-list>
             <v-list-item
               v-for="child in item.children"
-              :key="child"
-              :title="child"
+              :key="child.label"
+              :title="child.label"
+              @click="goToRoute(child.routeName)"
             />
           </v-list>
         </v-menu>
@@ -86,8 +88,8 @@
         <!-- children items -->
         <v-list-item
           v-for="child in item.children"
-          :key="child"
-          :title="child"
+          :key="child.label"
+          :title="child.label"
           class="drawer-subitem"
         />
       </v-list-group>
@@ -103,29 +105,37 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import logo from '../assets/acmtransport-logo.png'
+import { ref } from 'vue';
+import logo from '../assets/acmtransport-logo.png'; 
+import { ROUTE_NAME } from "../router/index";
+import router from "../router";
 // import logo from '../assets/logo.png'
 
 const drawer = ref(false)
 // const url = 'https://randy20gatcha.github.io/homepage-prototype/'
 
 const navItems = [
-  { label: 'HOME' },
+  { label: 'HOME', routeName: ROUTE_NAME.HOME},
   { label: 'ABOUT US' },
   { label: 'SERVICES',
     children: [
-      'DESIGN AND ENGINEERING',
-      'MANUFACTURING',
-      'BUILDS AND FIT OUTS',
-      'TRIMS AND ACCESSORIES',
-      'AUTO ELECTRICS',
-      'SERVICING AND MAINTENANCE'
+     { label: 'DESIGN AND ENGINEERING', routeName: ROUTE_NAME.DESIGN_ENGINEERING},
+     {label: 'MANUFACTURING', routeName: ""},
+     {label: 'BUILDS AND FIT OUTS', routeName: ""},
+     {label: 'TRIMS AND ACCESSORIES', routeName: ""},
+     {label: 'AUTO ELECTRICS', routeName: ""},
+     {label: 'SERVICING AND MAINTENANCE', routeName: ""}
     ]
   },
-  { label: 'SPECIALISATION' },
-  { label: 'CONTACT US' }
+  { label: 'SPECIALISATION', routeName: ""},
+  { label: 'CONTACT US', routeName: "" }
 ]
+
+const goToRoute = (routeName: string) => {
+  router.push({
+    name: routeName.toLowerCase(),
+  });
+}
 
 // Flatten nav items for mobile drawer
 // const flatNavItems = computed(() =>
