@@ -74,6 +74,7 @@
         v-if="!item.children"
         :title="item.label"
         class="drawer-item"
+        @click="goToRoute(item?.routeName ?? '')"
       />
 
       <!-- If has children: use v-list-group -->
@@ -91,6 +92,7 @@
           :key="child.label"
           :title="child.label"
           class="drawer-subitem"
+          @click="goToRoute(child.routeName)"
         />
       </v-list-group>
     </template>
@@ -119,15 +121,15 @@ const navItems = [
   { label: 'ABOUT US' },
   { label: 'SERVICES',
     children: [
-     { label: 'DESIGN AND ENGINEERING', routeName: ROUTE_NAME.DESIGN_ENGINEERING},
-     {label: 'MANUFACTURING', routeName: ""},
-     {label: 'BUILDS AND FIT OUTS', routeName: ""},
-     {label: 'TRIMS AND ACCESSORIES', routeName: ""},
-     {label: 'AUTO ELECTRICS', routeName: ""},
-     {label: 'SERVICING AND MAINTENANCE', routeName: ""}
+     { label: 'DESIGN AND ENGINEERING', routeName: ROUTE_NAME.DESIGN_ENGINEERING },
+     {label: 'MANUFACTURING', routeName: ROUTE_NAME.MANUFACTURING },
+     {label: 'BUILDS AND FIT OUTS', routeName: "" },
+     {label: 'TRIMS AND ACCESSORIES', routeName: " "},
+     {label: 'AUTO ELECTRICS', routeName: "" },
+     {label: 'SERVICING AND MAINTENANCE', routeName: "" }
     ]
   },
-  { label: 'SPECIALISATION', routeName: ""},
+  { label: 'SPECIALISATION', routeName: "" },
   { label: 'CONTACT US', routeName: "" }
 ]
 
@@ -137,10 +139,6 @@ const goToRoute = (routeName: string) => {
   });
 }
 
-// Flatten nav items for mobile drawer
-// const flatNavItems = computed(() =>
-//   navItems.flatMap(item => item.children || item.label)
-// )
 </script>
 
 <style scoped>
