@@ -27,7 +27,7 @@
       style="bottom: 260px; left: 50%; transform: translateX(-50%); z-index: 10;"
     >
       <ContactBtn />
-  </div>
+    </div>
   </div>
 </template>
 
