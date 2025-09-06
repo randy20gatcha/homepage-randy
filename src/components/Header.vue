@@ -57,7 +57,7 @@
         <template #prepend>
           <v-icon>mdi-phone</v-icon>
         </template>        
-        <span class="text-h6">03 8679 6888</span>
+        <span class="text-h6">+63 922 923 0158</span>
       </v-btn>
     </div>
 
@@ -110,7 +110,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import logo from '../assets/RMG_Logo.png'; 
+import logo from '../assets/randy_logo.png'; 
 import { ROUTE_NAME } from "../router/index";
 import router from "../router";
 import { useRoute } from "vue-router";
@@ -122,19 +122,19 @@ const route = useRoute();
 
 const navItems = [
   { label: 'HOME', routeName: ROUTE_NAME.HOME},
-  { label: 'ABOUT US' },
+  { label: 'ABOUT ME' },
   { label: 'SERVICES',
     children: [
-     { label: 'DESIGN AND ENGINEERING', routeName: ROUTE_NAME.DESIGN_ENGINEERING },
-     {label: 'MANUFACTURING', routeName: ROUTE_NAME.MANUFACTURING },
-     {label: 'BUILDS AND FIT OUTS', routeName: ROUTE_NAME.BUILDS_FITOUTS },
-     {label: 'TRIMS AND ACCESSORIES', routeName: " "},
-     {label: 'AUTO ELECTRICS', routeName: "" },
-     {label: 'SERVICING AND MAINTENANCE', routeName: "" }
+     {label: 'CUSTOM WEBSITE DEVELOPMENT', routeName: ROUTE_NAME.DESIGN_ENGINEERING},
+     {label: 'RESPONSIVE DESIGN', routeName: ROUTE_NAME.MANUFACTURING},
+     {label: 'API & FEATURE INTEGRATION', routeName: ROUTE_NAME.BUILDS_FITOUTS },
+    //  {label: 'TRIMS AND ACCESSORIES', routeName: " "},
+    //  {label: 'AUTO ELECTRICS', routeName: ""},
+    //  {label: 'SERVICING AND MAINTENANCE', routeName: ""}
     ]
   },
-  { label: 'SPECIALISATION', routeName: "" },
-  { label: 'CONTACT US', routeName: "" }
+  // { label: 'SPECIALISATION', routeName: "" },
+  { label: 'CONTACT ME', routeName: "" }
 ]
 
 const goToRoute = (routeName: string) => {

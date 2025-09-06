@@ -8,7 +8,10 @@
       rounded
       style="bottom: -100px;"
     >
-      Contact us now
+      <template #prepend>
+        <v-icon>mdi-message</v-icon>
+      </template>        
+      <span class="text-h6">Send me a message</span>
     </v-btn>
   </div>
 </template>

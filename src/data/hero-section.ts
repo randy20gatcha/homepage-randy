@@ -1,18 +1,13 @@
-import ambulance from "../assets/ambulance.jpg";
-import fitout from "../assets/fitout.jpg";
-import police from "../assets/police.jpg";
+import userApp from "../assets/medisureonline.jpg";
+import ehr from "../assets/electronic-health-record.jpg";
 
 export const HER0_IMAGES = [
   {
-    url: ambulance,
-    label: 'Emergency Vehicle',
+    url: userApp,
+    label: 'User App for Clinic use',
   },
   {
-    url: fitout,
-    label: 'Vehicle Fit Out',
+    url: ehr,
+    label: 'Electronic Health Record',
   },
-  {
-    url: police,
-    label: 'Law Enforcement',
-  }
 ];
