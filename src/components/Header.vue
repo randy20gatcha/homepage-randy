@@ -5,14 +5,15 @@
        class="logo-link" 
        href="/" 
        rel="noopener noreferrer"
-       style="text-decoration: none; display: block; line-height: 0;"
+       style="text-decoration: none; display: block; line-height: 0;npm instal "
       >
         <img
           :src="logo"
           alt="ACM Transport Tech Logo"
-          height="150"
-          width="280"
+          height="100"
+          width="150"
           contain
+          style="border-radius: 15px;"
         />
      </a>
 
@@ -109,7 +110,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import logo from '../assets/acmtransport-logo.png'; 
+import logo from '../assets/RMG_Logo.png'; 
 import { ROUTE_NAME } from "../router/index";
 import router from "../router";
 import { useRoute } from "vue-router";
