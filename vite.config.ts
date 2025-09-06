@@ -4,7 +4,7 @@ import vuetify from 'vite-plugin-vuetify'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/acmtransport-prototype/',
+  base: '/homepage-randy/',
   plugins: [
     vue(),
     vuetify({ autoImport: true }),

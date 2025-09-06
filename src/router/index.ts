@@ -45,7 +45,7 @@ export const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory("/acmtransport-prototype/"),
+  history: createWebHistory("/homepage-randy/"),
   routes
 })
 
