@@ -110,7 +110,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import logo from '../assets/randy_logo.png'; 
+import logo from '../assets/logo-randy.png'; 
 import { ROUTE_NAME } from "../router/index";
 import router from "../router";
 import { useRoute } from "vue-router";
